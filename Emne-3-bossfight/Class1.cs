@@ -58,19 +58,14 @@ namespace Emne_3_bossfight
             return dmg;
         }
 
-        public void SimulateFight(GameCharacter boss)
+        public void SimulateFight(GameCharacter enemy)
         {
-                Fight(boss, RandomDMG());
+                Fight(enemy, RandomDMG());
                 Thread.Sleep(500);
 
-            if (Health < 0)
+            if(enemy.Health < 0)
             {
-                Console.WriteLine($"{Name} has been defeated");
-                Environment.Exit(0);
-            }
-            else if (boss.Health < 0)
-            {
-                Console.WriteLine($"{boss.Name} has been slain");
+                Console.WriteLine($"{enemy.Name} has been slain");
                 Environment.Exit(0);
             }
         }
