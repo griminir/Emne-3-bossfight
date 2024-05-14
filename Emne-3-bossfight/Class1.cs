@@ -37,11 +37,12 @@ namespace Emne_3_bossfight
                 enemy.Health = enemy.Health - Strength;
                 Stamina -= 10;
                 Console.WriteLine($"{Name} hit {enemy.Name} for {Strength}DMG. {enemy.Name} has {enemy.Health} left");
+                Console.WriteLine();
             }
             else if (Stamina <= 0)
             {
                 Recharge();
-                Console.WriteLine($"{Name} is to tired to attack");
+                Console.WriteLine();
             }
         }
 
@@ -63,7 +64,7 @@ namespace Emne_3_bossfight
                 Fight(enemy, RandomDMG());
                 Thread.Sleep(500);
 
-            if(enemy.Health < 0)
+            if(enemy.Health <= 0)
             {
                 Console.WriteLine($"{enemy.Name} has been slain");
                 Environment.Exit(0);
